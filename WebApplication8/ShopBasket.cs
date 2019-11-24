@@ -7,9 +7,9 @@ namespace WebApplication8
 {
     public class ShopBasket
     {
-        public Dictionary<int, int> BasketList = new Dictionary<int, int> { };
+        public Dictionary<string, int> BasketList = new Dictionary<string, int> { };
 
-        public void ChangeList(int id, int number)
+        public void ChangeList(string id, int number)
         {
             if (BasketList.ContainsKey(id))
             {

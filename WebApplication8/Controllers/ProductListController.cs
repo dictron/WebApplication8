@@ -35,9 +35,18 @@ namespace WebApplication8.Controllers
         }
 
         [HttpPost]
+        public void Post([FromBody]string value1,string value2)
+        {
+            ShopBasket Basket = new ShopBasket();
+            Basket.ChangeList(value1, Convert.ToInt32(value2));
+
+        }
+
+        [HttpPost]
 
         public IEnumerable<ShopBasket> Set()
         {
+            
             ShopBasket Basket = new ShopBasket();
             Basket.ChangeList(IEnumerable<ShopBasket>);
             return 
