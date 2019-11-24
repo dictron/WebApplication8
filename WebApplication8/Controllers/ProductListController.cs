@@ -23,6 +23,8 @@ namespace WebApplication8.Controllers
             _logger = logger;
         }
 
+        ShopBasket Basket = new ShopBasket();
+
 
         [HttpGet]
         public IEnumerable<ProductList> Get()
@@ -40,13 +42,19 @@ namespace WebApplication8.Controllers
         [HttpPost]
         public void Post(InputModel[] model)
         {
-            ShopBasket Basket = new ShopBasket();
             foreach(var idzakaz in model)
             {
                 Basket.ChangeList(idzakaz.Id, idzakaz.Count);
             }
-
         }
 
+        [HttpDelete]
+        public void Delete(InputModel[] model)
+        {
+            foreach (var idzakaz in model)
+            {
+                Basket.ChangeList(idzakaz.Id, -idzakaz.Count);
+            }
+        }
     }
 }

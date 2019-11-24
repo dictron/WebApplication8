@@ -19,6 +19,14 @@ namespace WebApplication8
             {
                 BasketList.Add(id, number);
             }
+            
+            foreach(var keva in BasketList)
+            {
+                if (keva.Value<0)
+                {
+                    BasketList.Remove(keva.Key);
+                }
+            }
         }
     }
 }
