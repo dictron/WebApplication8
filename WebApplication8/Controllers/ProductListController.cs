@@ -23,7 +23,7 @@ namespace WebApplication8.Controllers
             _logger = logger;
         }
 
-        ShopBasket Basket = new ShopBasket();
+        static ShopBasket Basket = new ShopBasket();
 
 
         [HttpGet]

@@ -13,19 +13,16 @@ namespace WebApplication8
         {
             if (BasketList.ContainsKey(id))
             {
-                BasketList[id] = BasketList[id] + number;
+                BasketList[id] += number;
             }
             else
             {
                 BasketList.Add(id, number);
             }
-            
-            foreach(var keva in BasketList)
+
+            if (BasketList[id] < 0)
             {
-                if (keva.Value<0)
-                {
-                    BasketList.Remove(keva.Key);
-                }
+                BasketList.Remove(id);
             }
         }
     }
