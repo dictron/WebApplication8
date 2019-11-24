@@ -7,9 +7,9 @@ namespace WebApplication8
 {
     public class ShopBasket
     {
-        public Dictionary<string, int> BasketList = new Dictionary<string, int> { };
+        public Dictionary<int, int> BasketList = new Dictionary<int, int> {};
 
-        public void ChangeList(string id, int number)
+        public void ChangeList(int id, int number)
         {
             if (BasketList.ContainsKey(id))
             {
@@ -19,7 +19,6 @@ namespace WebApplication8
             {
                 BasketList.Add(id, number);
             }
-            BasketList.Add(id, number);
         }
     }
 }
